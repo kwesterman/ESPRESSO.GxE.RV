@@ -1,0 +1,17 @@
+Package: ESPRESSO.GxE.RV
+Type: Package
+Title: Power Analysis and Sample Size Calculation for a gene-environment
+    interaction model
+Version: 1.0
+Date: 2021-04-05
+Original Author: Amadou Gaye
+Maintainer: Kenny Westerman <kewesterman@mgh.harvard.edu>
+Description: The package allows for the Estimation of Sample-size and Power by
+    Exploring Simulated Study Outcomes for an interaction model where the
+    covariates respectively a genetic variant (SNP), an environmental/lifestyle
+    exposure and an interaction term. It supports simulation-based power
+    calculation for stand-alone case-control studies and for case-control
+    analyses nested in cohort studies, that take account of realistic
+    assessment error. This repository expands the original ESPRESSO.GxE tool to simulate aggregate tests of rare variants, in which test statistics from multiple variants are being tested jointly.
+License: GPL-3
+LazyLoad: yes
