@@ -4,7 +4,7 @@
 \usage{
 sim.pheno.bin.GxE(num.obs = NULL, disease.prev = NULL, genotype = NULL,
   environment = NULL, interaction = NULL, subject.effect.data = NULL,
-  geno.OR = NULL, env.OR = NULL, int.OR = NULL)
+  geno.OR = NULL, geno.frac_causal = NULL, env.OR = NULL, int.OR = NULL)
 }
 \arguments{
   \item{num.obs}{Number of observations to generate per
@@ -22,6 +22,8 @@ sim.pheno.bin.GxE(num.obs = NULL, disease.prev = NULL, genotype = NULL,
   the heterogenity in baseline disease risk}
 
   \item{geno.OR}{Odds ratios of the genetic determinant}
+
+  \item{geno.frac_causal}{Fraction of causal genetic variants}
 
   \item{env.OR}{Odds ratios of the two environments}
 

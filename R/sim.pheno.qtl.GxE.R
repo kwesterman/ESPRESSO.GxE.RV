@@ -6,6 +6,7 @@
 #' @param pheno.sd standard deviation
 #' @param genotype Genotype matrix (N x g.nvar)
 #' @param geno.efkt Effect of the genetic variant
+#' @param geno.frac_causal Fraction of causal genetic variants
 #' @param environment Exposure data for environment
 #' @param env.efkt Effect of the environmental determinants
 #' @param interaction Interaction matrix (N x g.nvar)

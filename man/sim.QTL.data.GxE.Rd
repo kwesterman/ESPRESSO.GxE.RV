@@ -3,6 +3,7 @@
 \title{Simulates subjects for continuous outcome}
 \usage{
 sim.QTL.data.GxE(n = NULL, ph.mean = NULL, ph.sd = NULL, freq = NULL,
+  g.nvar = NULL, g.frac_causal=NULL,
   g.model = NULL, g.efkt = NULL, e.model = NULL, e.efkt = NULL,
   e.prev = NULL, e.mean = NULL, e.sd = NULL, e.low.lim = NULL,
   e.up.lim = NULL, i.efkt = NULL, pheno.rel = NULL)
@@ -16,6 +17,10 @@ sim.QTL.data.GxE(n = NULL, ph.mean = NULL, ph.sd = NULL, freq = NULL,
 
   \item{freq}{Minor allele frequencies of the genetic
   variant}
+
+  \item{g.nvar}{Integer number of genetic variants to simulate}
+
+  \item{g.frac_causal}{Fraction of causal genetic variants}
 
   \item{g.model}{Genetic model; 0 for binary and 1 for
   continuous}

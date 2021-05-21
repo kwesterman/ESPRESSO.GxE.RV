@@ -4,6 +4,7 @@
 \usage{
 sim.CC.data.GxE(n = NULL, ncases = NULL, ncontrols = NULL,
   max.sample.size = NULL, pheno.prev = NULL, freq = NULL,
+  g.nvar = NULL, g.frac_causal=NULL,
   g.model = NULL, g.OR = NULL, e.model = NULL, e.prev = NULL,
   e.mean = NULL, e.sd = NULL, e.low.lim = NULL, e.up.lim = NULL,
   e.OR = NULL, i.OR = NULL, b.OR = NULL, ph.error = NULL)
@@ -22,6 +23,10 @@ sim.CC.data.GxE(n = NULL, ncases = NULL, ncontrols = NULL,
   \item{pheno.prev}{Prevalence of the binary outcome}
 
   \item{freq}{Minor allele frequency}
+
+  \item{g.nvar}{Integer number of genetic variants to simulate}
+
+  \item{g.frac_causal}{Fraction of causal genetic variants}
 
   \item{g.model}{Genetic model; 0 for binary and 1 for
   additive}

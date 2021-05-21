@@ -9,6 +9,7 @@
 #' @param subject.effect.data Subject effect data, reflects the heterogenity 
 #' in baseline disease risk
 #' @param geno.OR Odds ratios of the genetic determinant
+#' @param geno.frac_causal Fraction of causal genetic variants
 #' @param env.OR Odds ratios of the two environments
 #' @param int.OR Odds ration of the interaction
 #' @return A dataframe of phenotype
@@ -17,7 +18,7 @@
 #'
 sim.pheno.bin.GxE <- function(
    num.obs=NULL, disease.prev=NULL, genotype=NULL, environment=NULL, interaction=NULL, 
-   subject.effect.data=NULL, geno.frac_causal=NULL, geno.OR=NULL, env.OR=NULL, int.OR=NULL
+   subject.effect.data=NULL, geno.OR=NULL, geno.frac_causal=NULL, env.OR=NULL, int.OR=NULL
 ) { 
    # GET THE ALPHA AND BETA VALUES
    alpha <- log(disease.prev/(1-disease.prev))

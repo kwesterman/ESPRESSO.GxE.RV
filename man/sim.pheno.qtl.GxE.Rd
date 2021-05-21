@@ -3,7 +3,7 @@
 \title{Simulates continuous outcome data}
 \usage{
 sim.pheno.qtl.GxE(numsubjects = NULL, pheno.mean = NULL, pheno.sd = NULL,
-  genotype = NULL, geno.efkt = NULL, environment = NULL,
+  genotype = NULL, geno.efkt = NULL, geno.frac_causal = NULL, environment = NULL,
   env.efkt = NULL, interaction = NULL, int.efkt = NULL)
 }
 \arguments{
@@ -16,6 +16,8 @@ sim.pheno.qtl.GxE(numsubjects = NULL, pheno.mean = NULL, pheno.sd = NULL,
   \item{genotype}{Genotype}
 
   \item{geno.efkt}{Effects of the genetic variant}
+
+  \item{geno.frac_causal}{Fraction of causal genetic variants}
 
   \item{environment}{Exposure data for environment}
 

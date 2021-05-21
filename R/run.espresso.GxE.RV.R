@@ -92,7 +92,7 @@ run.espresso.GxE.RV <- function(simulation.params=NULL, pheno.params=NULL, geno.
    # DECLARE MATRIX THAT STORE THE RESULTS FOR EACH SCENARIO (ONE PER SCENARIO PER ROW)
    output.file <- "output.RV.csv"
    output.matrix <- matrix(numeric(0), ncol=ncol(s.parameters) + 2)
-   column.names <- c(colnames(s.parameters), "exceeded.sample.size?", "empirical.power")
+   column.names <- c(colnames(s.parameters), "exceeded.sample.size?", "empirical.power")#, "numsubjects.required")
    write(t(column.names), output.file, dim(output.matrix)[2], sep=";")
    
    #-----------LOOP THROUGH THE SCENARIOS - DEALS WITH ONE SCENARIO AT A TIME-------------
@@ -218,20 +218,20 @@ run.espresso.GxE.RV <- function(simulation.params=NULL, pheno.params=NULL, geno.
       
       #---------------------------POWER AND SAMPLE SIZE CALCULATIONS----------------------#
       
-      # CALCULATE THE SAMPLE SIZE REQUIRED UNDER EACH MODEL
-      # sample.sizes.required <- samplsize.calc(numcases, numcontrols, numsubjects, pheno.model, pval, power, mean.model.z)
-      
       # CALCULATE EMPIRICAL POWER AND THE MODELLED POWER 
       # THE EMPIRICAL POWER IS SIMPLY THE PROPORTION OF SIMULATIONS IN WHICH
       # THE Z STATISTIC FOR THE PARAMETER OF INTEREST EXCEEDS THE Z STATISTIC
       # FOR THE DESIRED LEVEL OF STATISTICAL SIGNIFICANCE
       empirical.power <- power.calc(pval, p.values)
-      
+
+      ## CALCULATE THE SAMPLE SIZE REQUIRED UNDER EACH MODEL
+      #mean.model.z <- mean(qnorm(1 - p.values / 2))  # This is a rough approximation of the mean z (precisely: mean of back-transformed z-values after combining multi-genotype p-values)
+      #sample.sizes.required <- samplsize.calc(numcases, numcontrols, numsubjects, pheno.model, pval, power, mean.model.z)
       
       #------------------MAKE FINAL A TABLE THAT HOLDS BOTH INPUT PARAMETERS AND OUTPUT RESULTS---------------#
       
       critical.res <- get.critical.results.GxE(
-         j, pheno.model, geno.model, env.model, sample.sizes.required, empirical.power
+         j, pheno.model, geno.model, env.model, empirical.power#, sample.sizes.required
       )
       # power$modelled, mean.beta)
       
@@ -281,7 +281,7 @@ run.espresso.GxE.RV <- function(simulation.params=NULL, pheno.params=NULL, geno.
          #    inparams [c(6,8,18,22,27,29:31,34,35)] <- "NA"
          #    inputs <- inparams          
          # }
-         outputs <- c(sample.size.excess, critical.res$empirical.power)
+         outputs <- c(sample.size.excess, critical.res$empirical.power)#, critical.res$number.of.subjects.required)
       } else {
          mod <- "quantitative"
          if (env.model == 0) {
@@ -302,7 +302,7 @@ run.espresso.GxE.RV <- function(simulation.params=NULL, pheno.params=NULL, geno.
             #    inputs <- inparams          
             # }
          }
-         outputs <- c(sample.size.excess, critical.res$empirical.power)
+         outputs <- c(sample.size.excess, critical.res$empirical.power)#, critical.res$number.of.subjects.required)
       }
       jth.row <- as.character(c(inputs, outputs))
       write(t(jth.row), output.file, dim(output.matrix)[2], append=TRUE, sep=";")

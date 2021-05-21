@@ -5,7 +5,7 @@
 \description{A table that contains parameters to set the genetic exposure}
 \usage{data(geno.params)}
 \format{
-  A data frame with 4 observations on the following 7 variables.
+  A data frame with 4 observations on the following 9 variables.
   \describe{
     \item{\code{scenario.id}}{scenario ID}
     \item{\code{geno.model}}{genetic model: binary (0) or additive (1)}
@@ -14,6 +14,8 @@
     \item{\code{geno.efkt}}{effect size if outcome is quantitative}
     \item{\code{geno.sensitivity}}{sensitivity of the assessment of the SNP alleles}
     \item{\code{geno.specificity}}{specificity of the assessment of the SNP alleles}
+    \item{\code{geno.nvariants}}{Number of genetic variants to simulate and test in aggregate}
+    \item{\code{geno.frac_causal}}{Fraction of variants simulated as causal (will be rounded up)}
   }
 }
 \examples{data(geno.params)}

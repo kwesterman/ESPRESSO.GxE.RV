@@ -39,7 +39,9 @@ samplsize.calc <-
       # FOR THE DESIRED POWER
       cases <- round(numcases*sample.size.inflation.required,0)
       controls <- round(numcontrols*sample.size.inflation.required,0) 
-      return(list(numcases.required=cases, numcontrols.required=controls))
+      subjects <- cases + controls
+      return(list(numsubjects.required=subjects))
+      #return(list(numcases.required=cases, numcontrols.required=controls))
       
     }else{ # IF THE OUTCOME IS CONTINUOUS
       # MULTIPLY THE INPUT NUMBER OF SUBJECTS BY THE INFLATION REQUIRED

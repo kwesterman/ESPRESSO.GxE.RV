@@ -3,7 +3,7 @@
 #' @description Fits a conventional unconditional logistic regression model with a binary or continuous phentype as outcome and the genetic, environmental, interaction determinants as covariates.
 #' @param pheno.model Type of outcome; 0=binary and 1=continuous
 #' @param observed.data A dataframe that contains covariates and outcome data
-#' @return A vector containing the beta, standard-error and z-statistic of each of the covariates
+#' @return A vector containing the beta, standard-error, z-statistic, and p-value for each of the covariates
 #' @keywords internal
 #' @author Gaye A.; Westerman K.
 #'
@@ -37,9 +37,8 @@ glm.analysis.GxE <- function(pheno.model=NULL, observed.data=NULL, g.idx=NULL) {
   return(list(beta=beta.value, se=se.value, z=z.value, p=p.value))
 }
 
-combine.variants <- 
-function(variant_results_list)
-{
+combine.variants <- function(variant_results_list) {
+  # This implements Fisher's method for p-value combination
   pvec <- sapply(variant_results_list, function(x) x[["p"]])
   p <- pchisq(-2 * sum(log(pvec)), df=2 * length(pvec), lower.tail=FALSE)
   p

@@ -5,6 +5,7 @@
 #' @param ph.mean statistical mean
 #' @param ph.sd standard deviation
 #' @param g.nvar Integer number of genetic variants to simulate
+#' @param g.frac_causal Fraction of causal genetic variants
 #' @param freq Minor allele frequencies of the genetic variants
 #' @param g.model Genetic model; 0 for binary and 1 for continuous
 #' @param g.efkt Effects of the genetic variant

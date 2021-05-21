@@ -6,8 +6,7 @@
 #' for the desured level if statistical significance. 
 #' The theoretical power is the power of the study.
 #' @param pval.thresh cut-off p-value defining statistical significance.
-#' @param z.values z-statistic of the determinant.
-#' @param mean.model.z mean z-statistic of the environmental determinant.
+#' @param p.values Vector of p-values (one per genetic variant).
 #' @return a list that contains the computed empirical power and theoretical power.
 #' @keywords internal
 #' @author Gaye A.; Westerman K.

@@ -2,16 +2,14 @@
 \alias{power.calc}
 \title{Calculates the empirical and theoretical power}
 \usage{
-power.calc(pval = NULL, z.values = NULL, mean.model.z = NULL)
+power.calc(pval = NULL, p.values = NULL)
 }
 \arguments{
   \item{pval}{cut-off p-value defining statistical
   significance.}
 
-  \item{z.values}{z-statistic of the determinant.}
+  \item{p.values}{Vector of p-values (one per genetic variant).}
 
-  \item{mean.model.z}{mean z-statistic of the environmental
-  determinant.}
 }
 \value{
 a list that contains the computed empirical power and

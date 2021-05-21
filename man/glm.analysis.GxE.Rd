@@ -12,8 +12,8 @@ glm.analysis.GxE(pheno.model = NULL, observed.data = NULL)
   and outcome data}
 }
 \value{
-A vector containing the beta, standard-error and
-z-statistic of each of the covariates
+A vector containing the beta, standard-error, 
+z-statistic, and p-value for each of the covariates
 }
 \description{
 Fits a conventional unconditional logistic regression model

@@ -8,6 +8,8 @@
 #' @param max.sample.size Maximum number of observations allowed
 #' @param pheno.prev Prevalence of the binary outcome
 #' @param freq Minor allele frequency
+#' @param g.nvar Integer number of genetic variants to simulate
+#' @param g.frac_causal Fracton of causal genetic variants
 #' @param g.model Genetic model; 0 for binary and 1 for additive
 #' @param g.OR Odds ratios of the genetic determinant
 #' @param e.model Model of the environmental exposure
