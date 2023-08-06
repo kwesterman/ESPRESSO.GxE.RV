@@ -3,6 +3,7 @@
 #' @description This function calls the functions required to run a full ESPRESSO.GxE.RV analysis 
 #'  where the model consists of an outcome (binary or continuous) determined by two interacting
 #'  covariates (a SNP  and an environmental exposure)
+#' @import stats
 #' @param simulation.params general parameters for the scenario(s) to analyse
 #' @param pheno.params paramaters for the outcome variables
 #' @param geno.params parameters for the genetic determinant(s)
@@ -24,19 +25,13 @@
 #' # and an interaction between the the genetic variant and the environmental exposure
 #' # scenario 4: a quantitative outcome determined by an additive SNP and continuous 
 #' # exposure and an interaction between the the genetic variant and the environmental exposure
-#' data(simulation.params) 
-#' data(pheno.params)
-#' data(geno.params)
-#' data(env.params)
 #' 
 #' # run the function for the first two scenarios, two binomial models
 #' run.espresso.GxE.RV(simulation.params, pheno.params, geno.params, env.params, scenarios2run=c(1,2))
-#'
-#' # run the function for the last two scenarios, two gaussian models
-#' run.espresso.GxE.RV(simulation.params, pheno.params, geno.params, env.params, scenarios2run=c(3,4))
 #' 
 #' }
 #'
+
 run.espresso.GxE.RV <- function(simulation.params=NULL, pheno.params=NULL, geno.params=NULL, 
                                 env.params=NULL, scenarios2run=1) {
    
@@ -45,28 +40,24 @@ run.espresso.GxE.RV <- function(simulation.params=NULL, pheno.params=NULL, geno.
       cat("\n WARNING!\n")
       cat(" No simulation parameters supplied\n")
       cat(" The default simulation parameters will be used\n")
-      simulation.params <- data(simulation.params)
    }
    
    if (is.null(pheno.params)) {
       cat("\n WARNING!\n")
       cat(" No outcome parameters supplied\n")
       cat(" The default outcome parameters will be used\n")
-      pheno.params <- data(pheno.params)
    }
    
    if (is.null(geno.params)) {
       cat("\n WARNING!\n")
       cat(" No genotype parameters supplied\n")
       cat(" The default genotype parameters will be used\n")
-      geno.params <- data(geno.params)
    }
    
    if (is.null(env.params)) {
       cat("\n WARNING!\n")
       cat(" No environmental parameters supplied\n")
       cat(" The default environmental parameters will be used\n")
-      env.params <- data(env.params)
    }
    
    # MERGE INPUT FILES TO MAKE ONE TABLE OF PARAMETERS
